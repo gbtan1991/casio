@@ -1,0 +1,87 @@
+@import 'reset';
+@import 'config';
+
+
+
+html{
+    height: 100%;
+}
+
+body{
+    height: 100%;
+
+    background: radial-gradient($bg-100, $bg-700 100%);
+    background-repeat: no-repeat;  
+    display: grid;
+    place-content: center;
+
+    .main-frame{
+        border-radius: 10px;
+        line-height: 1;
+        width: 180px;
+        padding: 0 5px 0 15px;
+        background: linear-gradient(45deg, $main-bg1, $main-bg2 );
+        
+        display: flex;
+        flex-direction: column;
+        
+        
+        
+        
+        
+        
+        
+        
+        .date-wrap{
+            
+            display: flex;
+            flex-direction: row;
+            align-items: baseline;
+            justify-content: space-between;
+
+            p{
+                font-family: 'Eurostile', sans-serif;
+                font-size: 0.7rem;
+            }
+
+            #date, #day{
+                font-family: 'DS-Digital', sans-serif;
+                font-size: 2rem;
+                font-weight: 900;
+            }
+        }        
+
+        
+        .time-wrap{
+            display: flex;
+            flex-direction: row;
+            align-items: baseline;
+            justify-content:end;
+
+            #time-hour, #time-min, .time-colon{
+                font-size: 3rem;
+                font-weight: 900;
+                
+            }
+
+            #time-sec{
+                font-size: 1.75rem;
+                font-weight: 500;
+            }
+
+            #time-hour, #time-min, #time-sec, .time-colon{
+                font-family: 'DS-Digital', sans-serif;
+                padding: 0 3px 0 3px;
+                
+            }
+        }
+
+    }
+
+
+   
+
+
+    
+
+}
