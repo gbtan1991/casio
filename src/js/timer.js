@@ -20,10 +20,7 @@ const dayIndex = currentDate.getDay();
 displayDate.innerHTML = date;
 displayDay.innerHTML = week[dayIndex];
 
-
 }
-
-
 
 
 
