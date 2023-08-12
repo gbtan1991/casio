@@ -1,3 +1,62 @@
+///CLOCK MODES
+
+document.addEventListener('DOMContentLoaded', function() {
+    //MODE ELEMENT DECLARATION
+    
+    const toggleButton = document.getElementById('changeMode');
+    const stopwatch = document.querySelector('.stopwatch-wrap'); 
+    const clock = document.querySelector('.time-wrap');
+    const startStop = document.getElementById('startStop');
+    const light = document.getElementById('light');
+    const lapReset = document.getElementById('lapReset');
+    const time24 = document.getElementById('24hrs');
+    const iconWatch = document.querySelector('.icon-watch');
+    //SET MODE TYPE
+    let mode = 0;
+
+
+    //DOM MANIPULATION FOR MODES -- THIS WILL BE CHANGE UPON DESIGNING
+    const hideTime = () => { 
+        clock.style.display = "none";
+        stopwatch.style.display = "flex";
+        startStop.style.display = "inline-block";
+        lapReset.style.display = "inline-block";
+        light.style.display = "none";  
+        time24.style.display = "none";
+        
+
+        
+        
+    }
+    const hideStopwatch = () => {
+        stopwatch.style.display = "none";
+        clock.style.display = "flex";
+        startStop.style.display = "none";
+        lapReset.style.display = "none";
+        light.style.display = "inline-block";
+        time24.style.display = "inline-block";
+        
+    }
+
+    //TOGGLE MODES
+    const toggleMode = () =>{
+        if (mode === 0){
+            mode = 1
+            hideTime();
+        } else {
+            mode = 0;
+            hideStopwatch();
+            
+        }
+    }
+
+    toggleButton.addEventListener('click', toggleMode);
+
+
+});
+
+
+
 const updateDate = () => {
 //ELEMENT DECLARATION 
 const displayDate = document.getElementById('date');
@@ -47,22 +106,13 @@ const updateClock = () => {
 
 }
 
-
 updateDate();
-updateClock();
 setInterval(updateDate, 1000);
+updateClock();
 setInterval(updateClock, 1000);
 
 
-
-
-
-
-
-
-
-
-
-
-
+document.addEventListener('DOMContentLoaded', function() {
+    const timeElement = document.getElementById(`stopwatch-hour`)
+})
 

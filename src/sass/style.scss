@@ -16,12 +16,12 @@ body{
     place-content: center;
 
     .frame-wrapper{
-        background-color: $main-bg3;
-        color: $watch-100;
-        width: 200px ;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        // background-color: $main-bg3;
+        // color: $watch-100;
+        // width: 200px ;
+        // display: flex;
+        // flex-direction: column;
+        // align-items: center;
 
 
     header{
@@ -31,7 +31,7 @@ body{
 
         h1{
             color: $watch-100;
-            font-family: 'Eurostile', sans-serif;
+            font-family: 'Eurostile-bold', sans-serif;
             font-size: 1rem;
         }
 
@@ -43,7 +43,18 @@ body{
         }
     }
 
+main{
+    background-color: $main-bg3;
+    color: $watch-100;
+    width: 200px ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
 
+    
+
+}
 
     .main-frame{
         border-radius: 10px;
@@ -56,7 +67,7 @@ body{
         flex-direction: column;
 
         color: $main-bg3;
-        box-shadow: 0px 0px 0 5px black, 0px 0px 0 8px $main-bg1;
+        box-shadow: 0px 0px 0 5px black, 0px 0px 0 6px $main-bg1;
         
       
         .date-wrap{
@@ -67,40 +78,40 @@ body{
             justify-content: space-between;
 
             p{
-                font-family: 'Eurostile', sans-serif;
+                font-family: 'Eurostile-bold', sans-serif;
                 font-size: 0.7rem;
+                
             }
 
             #date, #day{
                 font-family: 'DS-Digital', sans-serif;
-                font-size: 2rem;
+                font-size: 1.8rem;
                 font-weight: 900;
             }
         }        
 
         
-        .time-wrap{
+        .time-wrap, .stopwatch-wrap{
             display: flex;
             flex-direction: row;
             align-items: baseline;
             justify-content:end;
 
-            #time-hour, #time-min, .time-colon{
+            #time-hour, #time-min, #time-sec, .time-colon, #stopwatch-hour, #stopwatch-min, #stopwatch-sec, .stopwatch-colon{
+                font-family: 'DS-Digital', sans-serif;
+                padding: 0 3px 0 3px;
                 font-size: 3rem;
                 font-weight: 900;
                 
             }
 
-            #time-sec{
+
+            #time-sec, #stopwatch-sec{
                 font-size: 1.75rem;
                 font-weight: 500;
             }
 
-            #time-hour, #time-min, #time-sec, .time-colon{
-                font-family: 'DS-Digital', sans-serif;
-                padding: 0 3px 0 3px;
-                
-            }
+          
         }
 
     }
@@ -109,6 +120,38 @@ body{
 }
 
 
+
+
+.inner-wrap{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    
+    width: 180px;
+    margin: 6px 0;
+
+    .light-wrap, .mode-wrap, .start-wrap{
+        display: flex;
+        align-items: center;
+
+        gap: 3px;
+
+    }
+
+    .mini-menu{
+        font-size: 0.5rem;
+        font-family: 'Eurostile', sans-serif;
+        
+              
+    }
+
+    .lithium{
+        color: $main-bg1;
+    }
+    
+    
+}
     
 
 }
