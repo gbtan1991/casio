@@ -97,7 +97,7 @@ main{
             align-items: baseline;
             justify-content:end;
 
-            #time-hour, #time-min, #time-sec, .time-colon, #stopwatch-hour, #stopwatch-min, #stopwatch-sec, .stopwatch-colon{
+            #time-hour, #time-min, #time-sec, .time-colon, #stopwatch-ms, #stopwatch-min, #stopwatch-sec, .stopwatch-colon{
                 font-family: 'DS-Digital', sans-serif;
                 padding: 0 3px 0 3px;
                 font-size: 3rem;
@@ -106,7 +106,7 @@ main{
             }
 
 
-            #time-sec, #stopwatch-sec{
+            #time-sec, #stopwatch-ms{
                 font-size: 1.75rem;
                 font-weight: 500;
             }
