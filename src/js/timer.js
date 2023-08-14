@@ -108,14 +108,14 @@ const updateClock = () => {
 
     //GETTING TIME
     const currentDate = new Date();
-    const hours = String(currentDate.getHours()).padEnd(2, '0');
+    const hours = String(currentDate.getHours()).padStart(2, '0');
     const minutes = String(currentDate.getMinutes()).padStart(2, '0');
     const seconds = String(currentDate.getSeconds()).padStart(2, '0');
 
     //DISPLAY TIME IN DOM
-    displayHour.innerHTML = hours;
-    displayMinute.innerHTML = minutes;
-    displaySecond.innerHTML = seconds;
+    displayHour.textContent = hours;
+    displayMinute.textContent = minutes;
+    displaySecond.textContent = seconds;
 
 }
 
@@ -127,48 +127,92 @@ setInterval(updateClock, 1000);
 
 
 
-//STOPWATCH FUNCTIONALITY
 const minutesDisplay = document.getElementById('stopwatch-min');
 const secondsDisplay = document.getElementById('stopwatch-sec');
 const millisecondsDisplay = document.getElementById('stopwatch-ms');
 const startStopButton = document.getElementById('startStop');
 const resetButton = document.getElementById('lapReset');
 
+let startTime = 0;
+let elapsedTime = 0;
+let intervalId;
+let mins = 0;
+let secs = 0;
+let msecs = 0;
 
-let timerId; //TO STORE TIMER INTERVAL ID
-let startTime; //TO STORE THE START TIME
-let running = false; // TO TRACK IF STOPWATCH IS RUNNING
-let elapsedTime = 0; // TO STORE ELAPSED TIME
+startStopButton.addEventListener('click', () => {
+    if (intervalId) {
+        // Stop the stopwatch
+        clearInterval(intervalId);
+        intervalId = null;
+        elapsedTime = Date.now() - startTime;
+    } else {
+        // Start the stopwatch
+        startTime = Date.now() - elapsedTime;
+        intervalId = setInterval(updateTime, 10);
+    }
+});
 
+resetButton.addEventListener('click', () => {
+    clearInterval(intervalId);
+    intervalId = null;
+    elapsedTime = 0;
+    mins = 0;
+    secs = 0;
+    msecs = 0;
+    updateTimeDisplay();
+});
 
+function updateTime() {
+    elapsedTime = Date.now() - startTime;
 
-function formatTime(milliseconds) {
-    const totalSeconds = Math.floor(milliseconds / 1000);
-    const minutes = Math.floor(totalSeconds / 1000);
-    const seconds = totalSeconds % 60;
-    const millisecondsValue  = milliseconds % 1000;
-    
-    return {
-        minutes: String(minutes).padStart(2, '0'),
-        seconds: String(seconds).padStart(2, '0'),
-        milliseconds: String(millisecondsValue).padStart(2, '0')
-    };
+    msecs = Math.floor(elapsedTime / 1000 * 60) % 60;
+    secs = Math.floor((elapsedTime / 1000) % 60);
+    mins = Math.floor((elapsedTime / (1000 * 60)) % 60);
 
-    
+    updateTimeDisplay();
 }
 
+function updateTimeDisplay() {
+    minutesDisplay.textContent = String(mins).padStart(2, '0');
+    secondsDisplay.textContent = String(secs).padStart(2, '0');
+    millisecondsDisplay.textContent = String(msecs).padStart(2, '0');
+}
 
-function updateDisplay() {
-    const currentTime = new Date().getTime();
-    elapsedTime = currentTime - startTime;
-    const formattedTime = formatTime(elapsedTime);
-    minutesDisplay.textContent = formattedTime.minutes;
-    secondsDisplay.textContent = formattedTime.seconds;
-    millisecondsDisplay.textContent = formattedTime.milliseconds;
-    console.log(formattedTime);
-  }
+// let timerId; //TO STORE TIMER INTERVAL ID
+// let startTime; //TO STORE THE START TIME
+// let running = false; // TO TRACK IF STOPWATCH IS RUNNING
+// let elapsedTime = 0; // TO STORE ELAPSED TIME
+
+
+
+// function formatTime(milliseconds) {
+//     const totalSeconds = Math.floor(milliseconds / 1000);
+//     const minutes = Math.floor(totalSeconds / 1000);
+//     const seconds = totalSeconds % 60;
+//     const millisecondsValue  = milliseconds % 1000;
+    
+//     return {
+//         minutes: String(minutes).padStart(2, '0'),
+//         seconds: String(seconds).padStart(2, '0'),
+//         milliseconds: String(millisecondsValue).padStart(2, '0')
+//     };
+
+    
+// }
+
+
+// function updateDisplay() {
+//     const currentTime = new Date().getTime();
+//     elapsedTime = currentTime - startTime;
+//     const formattedTime = formatTime(elapsedTime);
+//     minutesDisplay.textContent = formattedTime.minutes;
+//     secondsDisplay.textContent = formattedTime.seconds;
+//     millisecondsDisplay.textContent = formattedTime.milliseconds;
+//     console.log(formattedTime);
+//   }
   
-  console.log(elapsedTime);
+//   console.log(elapsedTime);
 
 // const toggleStartStop = () => {
 //     if(!running){
