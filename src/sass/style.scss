@@ -95,9 +95,10 @@ main{
             display: flex;
             flex-direction: row;
             align-items: baseline;
-            justify-content:end;
+            
 
             #time-hour, #time-min, #time-sec, .time-colon, #stopwatch-ms, #stopwatch-min, #stopwatch-sec, .stopwatch-colon{
+                display: inline-block;
                 font-family: 'DS-Digital', sans-serif;
                 padding: 0 3px 0 3px;
                 font-size: 3rem;
@@ -152,6 +153,13 @@ main{
     }
     
     
+}
+
+
+.watchButtons{
+    background: linear-gradient(180deg, #ededed, #929292, #ededed, #929292);
+    width: 20px;
+    height: 15px;
 }
     
 
