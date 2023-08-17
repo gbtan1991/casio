@@ -19,8 +19,12 @@ body{
 
     header{
         background: $main-bg3;
-                text-align: center;
+        text-align: center;
         line-height: 1.2;
+        border-top-left-radius: 60px;
+        border-top-right-radius: 60px;
+        padding-top: 10px;
+        
 
         h1{
             color: $watch-100;
@@ -39,6 +43,8 @@ body{
 main{
     background-color: $main-bg3;
     padding: 5px;
+    border-bottom-left-radius: 60px;
+    border-bottom-right-radius: 60px;
 
 
 
@@ -165,6 +171,11 @@ footer{
         color: $main-bg1;
         font-style: italic;
         font-size: 1rem;
+
+        span{
+            color: red;
+        }
+
     }
 }
 
