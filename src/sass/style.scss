@@ -14,16 +14,31 @@ body{
     display: grid;
     place-content: center;
 
-   
+   .frame-wrapper{
+    background-color: $main-bg3;
+    clip-path: polygon(
+        10% 0%,
+        90% 0,
+        100% 10%,
+        100% 90%,
+        90% 100%,
+        10% 100%,
+        0% 90%,
+        0% 10%
+        );
+    border-radius: 18%;
+   }
+
 
 
     header{
-        background: $main-bg3;
+        background: transparent;
         text-align: center;
         line-height: 1.2;
-        border-top-left-radius: 60px;
-        border-top-right-radius: 60px;
         padding-top: 1px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         
 
         h1{
@@ -33,18 +48,21 @@ body{
         }
 
         p{
+            
+            text-align: center;
             color: $main-bg1;
             border-bottom: 1px solid $main-bg1;
+            width: 80%;
             font-style: italic;
             font-size: 0.8rem;
+            width: 150px;
         }
     }
 
 main{
-    background-color: $main-bg3;
+    background-color: transparent;
     padding: 5px;
-    border-bottom-left-radius: 60px;
-    border-bottom-right-radius: 60px;
+    
 
 
 
