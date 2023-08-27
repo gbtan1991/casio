@@ -14,8 +14,16 @@ body{
     display: grid;
     place-content: center;
 
+    .white-body{
+        background-color: $bg-100;
+        padding: 10px;
+        border-radius: 50px;
+    }
+
+
    .frame-wrapper{
     background-color: $main-bg3;
+    padding: 3px 10px;
     clip-path: polygon(
         10% 0%,
         90% 0,
@@ -26,7 +34,7 @@ body{
         0% 90%,
         0% 10%
         );
-    border-radius: 18%;
+    
    }
 
 
