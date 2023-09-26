@@ -1,24 +1,4 @@
-/* FONT STYLES */
-
-@font-face {
-    font-family: DS-Digital;
-    src: url(/resources/fonts/DS-Digital/DS-DIGIB.TTF);   
-}
-@font-face {
-    font-family: Eurostile-bold;
-    src: url(/resources/fonts/Eurostile-Font/Eurostile-Bold-Font.otf);
-}
-@font-face{
-    font-family: Eurostile;
-    src: url(/resources/fonts/Eurostile-Font/Eurostile-Bold-Font.otf);
-font-display: swap;
-}
-
-/* SIZE */
-$width : 320px;
-$height : 270px;
-
-
+/* COLORS */
 
 $bg-100: #c0c1c5;
 $bg-700: #393a3e;
@@ -32,60 +12,22 @@ $main-bg4: #383e3e;
 $watch-100: #eff3f4;
 
 
-
-/* COLORS */
-$model-color: #c1c2c6 ;
-$band-color: #16376d;
-$white-text: #f2f6f9;
-$yellow-text: #a49d8c;
-$lcd-bg: #c1b587;
-$lcd-text: #212a1c;
-$red-text: #7d3925;
-$led-color: #03fdc7;
-$lcd-font: "DSEG7 Classic",  monospace;
-$shine-gradient: linear-gradient(40deg, #fff0 15%, #fff2 30%, #fff6 50%, #fff2 70%, #fff0 85%);
-// $watch-border-radius: 11% / 25%;
-$casio-shape: polygon(0 20%, 10% 0, 90% 0, 100% 20%, 100% 80%, 90% 100%, 10% 100%, 0 80%);
-$buttons-notch-shape: polygon(100% 0, 100% 100%, 0 90%, 0 10%);
-
-
-/* CSS LIBRARY */
-.container{
-    display: flex;
-    justify-content: center;
+@font-face {
+    font-family: DS-Digital;
+    src: url(/resources/fonts/DS-Digital/DS-DIGIB.TTF);
+    
 }
 
-.text-white{
-    color: $white-text;
+@font-face {
+    font-family: Eurostile-bold;
+    src: url(/resources/fonts/Eurostile-Font/Eurostile-Bold-Font.otf);
 }
 
-.text-yellow{
-    color: $yellow-text;
+@font-face{
+    font-family: Eurostile;
+    src: url(/resources/fonts/Eurostile-Font/Eurostile-Regular-Font.otf);
+
 }
-
-.text-red {
-    color: $red-text;
-}
-
-.font-cursive{
-    font-family: sans-serif;
-    font-style: italic;
-    font-weight: bolder;
-    font-size: 15px;
-    letter-spacing: 1px;
-    transform: scale(1, 0.8);
-}
-
-.font-small{
-    font-size: 6px;
-    letter-spacing: 1px;
-}
-
-.font-medium{
-    font-size: 11px;
-}
-
-
 
 
 
