@@ -29,8 +29,6 @@ body{
                 background: linear-gradient(40deg, #bdbdbd 10%, #999 100%);
                 clip-path: polygon(0 0, 100% 0, 95% 100%, 5% 100%);
             }
-           
-            
 
             .first-band{               
                 width: inherit;
@@ -58,6 +56,7 @@ body{
 
         .watch-notch{
             position: relative;
+            overflow: visible;
             
 
             .notch-left{
@@ -71,6 +70,9 @@ body{
             z-index: -10;
             top: 50px;
             left: -13px;
+            
+
+            
             
             }
             .notch-right{
@@ -86,18 +88,164 @@ body{
             left: 295px;
             }
 
+            .notch-button{
+                z-index: -15;
+                width: 15px;
+                height: 15px;
+                border: 1px solid #989f7c;
+                background: linear-gradient(to bottom, #fbfbfa 30%, #4f4a42 60%, #aea084);
+                
+
+            }
+
+            .left{
+                position: absolute;
+                left: -20px
+            }
+
+            .right{
+                position: absolute;
+                left: 312px;
+
+                
+            }
+
+            .top{
+                top: 80px;
+                
+            }
+
+            .bottom{
+                top: 160px;
+            }
+
+
             
         .watch-body{
             border: 2px solid #777;
             background: linear-gradient(40deg, #999 15%, #bbb 30%, #ccc 50%, #bbb 70%, #999 85%);
-            width: 308px;
-            height: 268px;
+            width: $width;
+            height: $height;
             clip-path: polygon(0 20%, 10% 0, 90% 0, 100% 20%, 100% 80%, 90% 100%, 10% 100%, 0 80%);
             border-radius: 11% / 35% ;
             display: grid;
             place-content: center;
 
 
+            .watch-glass{
+                background-color: $main-bg3;
+                width: (calc($width) * 0.9);
+                height: (calc($height) * 0.9);
+                clip-path: polygon(0 20%, 10% 0, 90% 0, 100% 20%, 100% 80%, 90% 100%, 10% 100%, 0 80%);
+                border-radius: 16% / 35% ;
+                
+                .watch-core{
+                    width: (calc($width) * 0.84);
+                    height: (calc($height) * 0.84);
+                    clip-path: polygon(0 20%, 10% 0, 90% 0, 100% 20%, 100% 80%, 90% 100%, 10% 100%, 0 80%);
+                    border-radius: 16% / 35% ;
+                    background-color: $main-bg3;
+                    border: 2px solid $main-bg2;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 4px;
+
+
+                    .header{
+                        
+                        width: 190px;
+                        color: $watch-100;
+                        border-bottom: 1px solid $main-bg2;
+                        
+                        
+                        h1{
+                            font-family: Eurostile-bold, sans-serif;
+                            font-size: 16px;
+                        }
+
+                        p{
+                            color: $main-bg2;
+                            font-weight: bold;
+                            font-style: italic;
+                            font-size: 14px;
+                        }
+                    }
+                    
+
+                    .blue-border{
+                        background-color: $blue-border;
+                        width: 240px;
+                        height: 140px;
+                        clip-path: polygon(0 15%, 5% 0, 95% 0, 100% 15%, 100% 85%, 95% 100%, 5% 100%, 0 85%);
+                        border-radius: 8% / 32% ;
+
+                        .black-line{
+                            background-color: $main-bg3;
+                            width: 240px;
+                            height: 11px;
+                            position: absolute;
+                            top: 130px;
+                            z-index: -10;
+                        }
+        
+                        .main-frame{
+                            background-color: $main-bg3;
+                            width: (calc(240px) * 0.91);
+                            height: (calc(140px) * 0.9);
+                            clip-path: polygon(0 15%, 5% 0, 95% 0, 100% 15%, 100% 85%, 95% 100%, 5% 100%, 0 85%);
+                            border-radius: 8% / 32% ;
+                            color: $watch-100;
+                            display: grid;
+                            place-content: center;
+                            
+
+                            .inner-wrap{
+                                font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                                font-size: 11px;
+                                display: flex;
+                                flex-direction: row;
+                                justify-content: space-between;
+                                
+                                .mode-wrap{
+                                    display: flex;
+                                    flex-direction: row;
+                                    align-items: center;
+                                    gap: 4px;                                                                       
+                                }
+
+                                .lithium{
+                                    color: $main-bg2;
+                                }
+
+                            }
+
+                            .inner-main{
+                                width: 190px;
+                                height: 90px;
+                                border: 1px solid $main-bg2;
+                                border-radius: 10px;
+                                display: grid;
+                                    place-content: center;
+
+                                .timer-frame{
+                                    width: 178px;
+                                    height: 78px;
+                                    border-radius: 8px;
+                                    background-color: $main-bg2;
+                                    color: $main-bg3;
+                                    
+
+                                }
+                            } 
+
+                        }
+                    }
+
+
+                }
+
+            }
            
         }
 

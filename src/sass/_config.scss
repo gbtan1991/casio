@@ -2,14 +2,21 @@
 
 $body-color: #c0c1c5;
 $bg-700: #393a3e;
-
 $main-bg1: #c0b98c;
 $main-bg2: #c8c197;
-
 $main-bg3: #0b1014;
 $main-bg4: #383e3e;
+$blue-border: #17346c;
 
 $watch-100: #eff3f4;
+
+
+$shine: linear-gradient(40deg, #fff0 20%, #fff1 48%, #fff4 50%, #fff5 60%, #fff0 85%);
+// gradient(40deg, #fff0 15%, #fff2 30%, #fff6 50%, #fff2 70%, #fff0 85%);
+
+
+$width: 308px;
+$height: 268px;
 
 
 @font-face {
