@@ -226,7 +226,7 @@ body{
                                 border: 1px solid $main-bg2;
                                 border-radius: 10px;
                                 display: grid;
-                                    place-content: center;
+                                place-content: center;
 
                                 .timer-frame{
                                     width: 178px;
@@ -234,7 +234,39 @@ body{
                                     border-radius: 8px;
                                     background-color: $main-bg2;
                                     color: $main-bg3;
+                                    line-height: 1.2;
+                                    font-family: DS-Digital, sans-serif;
                                     
+                                                                        
+                                    
+                                    
+                                    .date-wrap{
+                                        display: flex;
+                                        justify-content: space-between;
+                                        align-items: baseline;
+                                        
+                                        font-size: 28px;
+
+                                        
+                                        
+                                        .timeFormatIcon{
+                                            font-family:Arial, Helvetica, sans-serif;
+                                            font-weight:900;
+                                            font-size: 11px;
+                                            padding-left: 20px;
+                                            
+                                            
+                                        }
+                                        
+                                    }
+
+                                    .time-wrap, .stopwatch-wrap{
+                                        display: flex;
+                                        justify-content: flex-end;
+                                        font-size: 40px;
+                                        
+
+                                    }
 
                                 }
                             } 
