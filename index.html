@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./dist/style.css">
     <title>Casio Watch Widget</title>
 </head>
+
 <body>
     <div class="container">
         <div class="top bracelet container">
@@ -15,193 +17,117 @@
             </div>
         </div>
         <div class="watch-notch">
-            <div class="notch-button top left"></div>    
-            <div class="notch-button bottom left"></div>
-            <div class="notch-button bottom right"></div>
-                <div class="notch-left"></div>
-                <div class="watch-body">
-                    <div class="watch-glass container">
-                        <div class="watch-core">
-                            <div class="header container">
-                                <h1>CASIO</h1>
-                                <p>ALARM CHRONOGRAPH</p> 
-                            </div>
-                            <div class="blue-border container">
-                            <div class="black-line"></div> 
+
+            <button class="notch-button top left" id="light"></button>
+            <button class="notch-button top left" id="lapReset" style="display: none"></button>
+
+            <button class="notch-button bottom left" id="changeMode"></button>
+
+            <button class="notch-button bottom right" id="startStop" style="display: none"></button>
+            <button class="notch-button bottom right" id="24hrs"></button>
+
+
+            <div class="notch-left"></div>
+            <div class="notch-right"></div>
+
+
+            <div class="watch-body">
+                <div class="watch-glass container">
+                    <div class="watch-core">
+                        <div class="header container">
+                            <h1>CASIO</h1>
+                            <p>ALARM CHRONOGRAPH</p>
+                        </div>
+
+                        <div class="blue-border container">
+                            <div class="black-line"></div>
                             <div class="main-frame">
                                 <div class="inner-wrap">
                                     <div class="mode-wrap">
-                                        <i class="fa-sharp fa-solid fa-play fa-flip-horizontal" style="font-size: 9px;"></i>
+                                        <i class="fa-sharp fa-solid fa-play fa-flip-horizontal"
+                                            style="font-size: 9px;"></i>
                                         <p>LIGHT/LAP-RESET</p>
                                     </div>
-                        
+
                                     <p class="lithium">Lithium</p>
                                 </div>
                                 <div class="inner-main">
-                                    <div class="timer-frame">
+                                    <div class="timer-frame" id="timerFrame">
                                         <div class="date-wrap">
                                             <p class="timeFormatIcon">24H</p>
                                             <i class="fa-solid fa-stopwatch icon-watch" style="display: none"></i>
-                                            
+
                                             <p id="day">1</p>
                                             <p id="date"></p>
-                                            
+
                                         </div>
-                                        <div class="time-wrap" >
+                                        <div class="time-wrap">
                                             <p id="time-hour"></p>
                                             <p class="time-colon">:</p>
                                             <p id="time-min"></p>
                                             <p id="time-sec"></p>
-                                
-                                        </div>        
-                                        
+
+                                        </div>
+
                                         <div class="stopwatch-wrap" style="display: none;">
                                             <p id="stopwatch-min">00</p>
                                             <p class="stopwatch-colon">:</p>
                                             <p id="stopwatch-sec">00</p>
                                             <p id="stopwatch-ms">00</p>
-                                
+
                                         </div>
-                        
-                                        
-                                
+
+
+
                                     </div>
-                                    
+
                                 </div>
                                 <div class="inner-wrap">
                                     <div class="mode-wrap">
-                                        <i class="fa-sharp fa-solid fa-play fa-flip-horizontal" style="font-size: 9px"></i>
+                                        <i class="fa-sharp fa-solid fa-play fa-flip-horizontal"
+                                            style="font-size: 9px"></i>
                                         <p class="mini-menu">MODE</p>
                                     </div>
-                        
+
                                     <div class="mode-wrap mini-menu">
                                         <p>START-STOP/12-24HR</p>
                                         <i class="fa-sharp fa-solid fa-play" style="font-size: 9px"></i>
                                     </div>
-                        
+
                                 </div>
 
                             </div>
-                            </div>
+                        </div>
 
+                        <div class="footer">
+
+                            <p>WATER</p>
+                            <img src="./resources/design/wr_casio_ui.png" />
+                            <p>RESIST</p>
                         </div>
                     </div>
                 </div>
-                
-                <div class="notch-right">
-                </div>
             </div>
 
-            <div class="bracelet container">
-                <div class="outer-band top">
-                    1
-                </div>
-                <div class="first-band container">
-                    <div class="inner-band"></div>
-                </div>
-            </div>
-    
+
         </div>
+
+        <div class="bracelet container">
+            <div class="outer-band top">
+                1
+            </div>
+            <div class="first-band container">
+                <div class="inner-band"></div>
+            </div>
+        </div>
+
+    </div>
     </div>
 
 
-    <button id="changeMode">mode</button> 
-    <button id="startStop" style="display: none">start-stop</button> 
-    <button id="light">light</button> 
-    <button id="lapReset" style="display: none">lap-reset</button> 
-    <button id="24hrs">12-24hrs</button>
-    <div class="watchButtons" id="changeMode">
-
-
-<!-- 
-    <div class="frame-wrapper">
-
-    <header>
-        <h1>CASIO</h1>
-        <p>ALARM CHRONOGRAPH</p>    
-    </header>
-
-
-
-    <main>
-        <div class="blue-borders">
-        <div class="accent-wrap">
-        <div class="inner-wrap">
-            <div class="light-wrap">
-                <i class="fa-sharp fa-solid fa-play fa-flip-horizontal" style="font-size: 9px;"></i>
-                <p class="mini-menu">LIGHT/LAP-RESET</p>
-            </div>
-
-            <p class="mini-menu lithium">Lithium</p>
-        </div>
-
-        <div class="inner-main">
-
-            <div class="main-frame">
-                <div class="date-wrap">
-                    <p class="timeFormatIcon">24H</p>
-                    <i class="fa-solid fa-stopwatch icon-watch" style="display: none"></i>
-                    
-                    <p id="day"></p>
-                    <p id="date"></p>
-                    
-                </div>
-                <div class="time-wrap" >
-                    <p id="time-hour"></p>
-                    <p class="time-colon">:</p>
-                    <p id="time-min"></p>
-                    <p id="time-sec"></p>
-        
-                </div>        
-                
-                <div class="stopwatch-wrap" style="display: none;">
-                    <p id="stopwatch-min">00</p>
-                    <p class="stopwatch-colon">:</p>
-                    <p id="stopwatch-sec">00</p>
-                    <p id="stopwatch-ms">00</p>
-        
-                </div>
-
-                
-        
-            </div>
-        </div>
-
-
-
-        <div class="inner-wrap">
-            <div class="mode-wrap">
-                <i class="fa-sharp fa-solid fa-play fa-flip-horizontal" style="font-size: 9px"></i>
-                <p class="mini-menu">MODE</p>
-            </div>
-
-            <div class="start-wrap mini-menu">
-                <p>START-STOP/12-24HR</p>
-                <i class="fa-sharp fa-solid fa-play" style="font-size: 9px"></i>
-            </div>
-
-        </div>
-
-      
-
-    </div>
-    
-</div>
-
-<footer>
-    <h3>WATER <span>WR</span> RESIST</h3>
-</footer>
-    </main>
-
-    
-
-</div>
-
-</div> -->
-
-    
-<script src="./src/js/timer.js"></script>
-<script src="https://kit.fontawesome.com/266a593bd6.js" crossorigin="anonymous"></script>
+    <script src="./src/js/timer.js"></script>
+    <script src="https://kit.fontawesome.com/266a593bd6.js" crossorigin="anonymous"></script>
 
 </body>
+
 </html>
