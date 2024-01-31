@@ -288,6 +288,14 @@ body {
                                                 padding-left: 11px;
 
                                             }
+                                            .timeFormatIcon2 {
+                                                font-family: Arial, Helvetica, sans-serif;
+                                                font-weight: 800;
+                                                font-size: 11px;
+                                                padding-left: 11px;
+                                                display: none;
+
+                                            }
 
                                             .icon-watch {
                                                 padding-left: 11px;
@@ -323,14 +331,17 @@ body {
 
 
                                         #time-hour,
+                                        #time-12hour,
                                         #time-min,
                                         #time-sec,
+                                        #time-ampm,
                                         .time-colon,
                                         #stopwatch-ms,
                                         #stopwatch-min,
-                                        #stopwatch-sec,
+                                        #stopwatch-sec, 
                                         .stopwatch-colon {
 
+                                            
                                             font-family: 'DS-Digital', sans-serif;
 
 
@@ -339,8 +350,14 @@ body {
 
                                         }
 
+                                        #time-ampm,
+                                        #time-12hour{
+                                            display: none;
+                                        };
+
 
                                         #time-sec,
+                                        #time-ampm,
                                         #stopwatch-ms {
 
                                             font-size: 1.75rem;
@@ -350,6 +367,7 @@ body {
 
 
                                         #time-hour,
+                                        #time-12hour,
                                         #time-min,
                                         #stopwatch-min,
                                         #stopwatch-sec {
