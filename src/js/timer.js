@@ -29,11 +29,13 @@ document.addEventListener('DOMContentLoaded', function () {
         startStop.style.display = "inline-block";
         lapReset.style.display = "inline-block";
         light.style.display = "none";
-        changeFormat.style.display = "none";
-        timeFormatIcon.style.display = "none";
+
+        timeFormat.style.display = "none";
+        timeFormatIcon.style.display = "none"
         iconWatch.style.display = "block";
         displayDate.style.visibility = "hidden";
         displayDay.style.visibility = "hidden";
+        
 
     }
     const hideStopwatch = () => {
@@ -43,10 +45,10 @@ document.addEventListener('DOMContentLoaded', function () {
         startStop.style.display = "none";
         lapReset.style.display = "none";
         iconWatch.style.display = "none";
-
+        timeFormat.style.display = "inline-block";
         light.style.display = "inline-block";
-        changeFormat.style.display = "inline-block";
-        timeFormatIcon.style.display = "block";
+        timeFormat.style.visibility = "visible";
+        timeFormatIcon.style.display = "inline-block"
         displayDate.style.visibility = "visible";
         displayDay.style.visibility = "visible";
 
@@ -239,6 +241,7 @@ const changeTimeFormat = () => {
     const displayHour = document.getElementById('time-hour');
     const displaySecond = document.getElementById('time-sec');
     const timeFormatIcon = document.querySelector('.timeFormatIcon')
+    const timeFormatIcon2 = document.querySelector('.timeFormatIcon2')
     
 
 
@@ -246,6 +249,7 @@ const changeTimeFormat = () => {
     let hours = currentDate.getHours();
     let hours12 = hours
     let ampm = "AM"
+    
     
     
     if(hours >= 12){
@@ -262,6 +266,8 @@ const changeTimeFormat = () => {
         displaySecond.style.display = 'block';
         display12Hour.style.display = 'none';
         displayAMPM.style.display = 'none';
+        timeFormatIcon.style.display = "block";      
+        timeFormatIcon2.style.display = "none";
         
         displayHour.textContent = String(hours).padStart(2, '0');
         displaySecond.textContent = String(currentDate.getSeconds()).padStart(2, '0');
@@ -270,7 +276,9 @@ const changeTimeFormat = () => {
         displaySecond.style.display = 'none';
         display12Hour.style.display = 'block';
         displayAMPM.style.display = 'block';
-        timeFormatIcon.textContent = "24H";
+        timeFormatIcon.style.display = 'none';
+        timeFormatIcon2.style.display = "block";
+
         display12Hour.textContent = String(hours12).padStart(2, '0');
         displayAMPM.textContent = ampm;
     }
@@ -279,6 +287,7 @@ const changeTimeFormat = () => {
 
 timeFormat.addEventListener('mousedown', () => {
     is24HourFormat = false;
+    
     changeTimeFormat()
     
     
