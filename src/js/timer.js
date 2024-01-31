@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const startStop = document.getElementById('startStop');
     const light = document.getElementById('light');
     const lapReset = document.getElementById('lapReset');
-    const time24 = document.getElementById('24hrs');
+    const timeFormat = document.getElementById('timeFormat');
     const iconWatch = document.querySelector('.icon-watch');
     const timeFormatIcon = document.querySelector('.timeFormatIcon');
     const displayDate = document.getElementById('date');
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
         startStop.style.display = "inline-block";
         lapReset.style.display = "inline-block";
         light.style.display = "none";
-        time24.style.display = "none";
+        changeFormat.style.display = "none";
         timeFormatIcon.style.display = "none";
         iconWatch.style.display = "block";
         displayDate.style.visibility = "hidden";
@@ -42,9 +42,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
         startStop.style.display = "none";
         lapReset.style.display = "none";
-        light.style.display = "inline-block";
-        time24.style.display = "inline-block";
         iconWatch.style.display = "none";
+
+        light.style.display = "inline-block";
+        changeFormat.style.display = "inline-block";
         timeFormatIcon.style.display = "block";
         displayDate.style.visibility = "visible";
         displayDay.style.visibility = "visible";
@@ -120,10 +121,13 @@ const updateClock = () => {
 
 }
 
+
+
 updateDate();
 setInterval(updateDate, 1000);
 updateClock();
 setInterval(updateClock, 1000);
+
 
 
 //STOPWATCH FUNCTION
@@ -221,3 +225,68 @@ light.addEventListener('mouseup', () => {
     
 });
 
+
+
+
+
+
+//CHANGE TIME FORMAT
+let is24HourFormat = true; 
+
+const changeTimeFormat = () => {
+    const display12Hour = document.getElementById('time-12hour');
+    const displayAMPM = document.getElementById('time-ampm');
+    const displayHour = document.getElementById('time-hour');
+    const displaySecond = document.getElementById('time-sec');
+    const timeFormatIcon = document.querySelector('.timeFormatIcon')
+    
+
+
+    const currentDate = new Date();
+    let hours = currentDate.getHours();
+    let hours12 = hours
+    let ampm = "AM"
+    
+    
+    if(hours >= 12){
+        ampm = "PM";
+        if(hours > 12){
+            hours12 -= 12;
+        }
+    }
+
+    
+  
+    if(is24HourFormat){
+        displayHour.style.display = 'block';
+        displaySecond.style.display = 'block';
+        display12Hour.style.display = 'none';
+        displayAMPM.style.display = 'none';
+        
+        displayHour.textContent = String(hours).padStart(2, '0');
+        displaySecond.textContent = String(currentDate.getSeconds()).padStart(2, '0');
+    } else {
+        displayHour.style.display = 'none';
+        displaySecond.style.display = 'none';
+        display12Hour.style.display = 'block';
+        displayAMPM.style.display = 'block';
+        timeFormatIcon.textContent = "24H";
+        display12Hour.textContent = String(hours12).padStart(2, '0');
+        displayAMPM.textContent = ampm;
+    }
+}
+
+
+timeFormat.addEventListener('mousedown', () => {
+    is24HourFormat = false;
+    changeTimeFormat()
+    
+    
+});
+
+timeFormat.addEventListener('mouseup', () => {
+    is24HourFormat = true;
+    changeTimeFormat();
+    
+    
+});
